@@ -14,6 +14,7 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 [![NumPy](https://img.shields.io/badge/NumPy-%23013243?style=for-the-badge&logo=numpy)](Link_To_Your_NumPy_Page)
 [![OpenCV](https://img.shields.io/badge/OpenCV-%23FD8C00?style=for-the-badge&logo=opencv)](Link_To_Your_OpenCV_Page)
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-%43FF6400?style=for-the-badge&logo=matplotlib&logoColor=white)](Link_To_Your_Matplotlib_Page)
+[![Pillow](https://img.shields.io/badge/Pillow-%23000000?style=for-the-badge&logo=pillow)](Link_To_Your_Pillow_Page)
 
 
 ---
@@ -48,10 +49,50 @@ def aplicar_color_casilla(color_img, i, j, tamaño_casilla, color=255):
 ```
 
 ### Tarea 2 Mondrian
-Crear una imagen con estilo Mondrian.
+
+Crear una imagen con estilo Mondrian. Para crear una imagen al estilo de Mondrian, es esencial considerar varios aspectos clave: la disposición aleatoria de los cuadros, las líneas negras que los delimitan, así como las variaciones en el ancho y la altura de cada rectángulo. Además, es importante que la distribución de los colores primarios (rojo, azul, amarillo) y los espacios en blanco se mantenga equilibrada a medida que se pintan los rectángulos.
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/7cee482b-4119-4ab1-89db-09c13c095bbd" width="200" height="280" ></td>
+</table>
+
+A continuación, se muestra un fragmento de código quelo ilustra:
+
+```python
+while posicionY < alto:
+    while posicionX < ancho:
+        # Se pinta un rectángulo empezando a la derecha del anterior
+        color_img[posicionY:posicionY + alto_rect, posicionX:posicionX + ancho_rect, :] = color_rect
+        # Se pinta una raya negra de ancho 10 desde la esquina superior derecha del cuadrado hasta la parte inferior de la imagen (por dentro)
+        color_img[posicionY:alto, posicionX + ancho_rect - 10:posicionX + ancho_rect, :] = [0,0,0]
+        # Se pinta una raya negra del ancho del cuadrado y de altura 10 debajo del cuadrado (por fuera)
+        color_img[posicionY + alto_rect:posicionY + alto_rect + 10, posicionX:posicionX + ancho_rect, :] = [0,0,0]
+        posicionX += ancho_rect # Se avanza la posición hasta la esquina superior derecha del rectángulo para comenzar en ese punto al crear el siguiente
+        # Se escogen nuevos color, alto y ancho para el siguiente rectángulo
+        color_rect, alto_rect, ancho_rect = colores[random.randint(0, len(colores)-1)], tamaños[random.randint(0, len(tamaños) - 1)], tamaños[random.randint(0, len(tamaños) - 1)]
+```
 
 ### Tarea 3 Funciones de dibujo de OpenCV
-Recrear una de las tareas anteriores utilizando las funciones de dibujo de OpenCV.
+
+Recrear una de las tareas anteriores utilizando las funciones de dibujo de OpenCV. En este caso, se optó por recrear lo que realizamos en la tarea uno, es decir, la creación de un tablero de ajedrez, utilizando las funciones de OpenCV. Para ello, se empleó la función `cv2.rectangle`, que permite dibujar los rectángulos que componen el tablero, alternando los colores para representar las casillas.
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/dac8c5a2-0fde-4063-acff-81db9015891d" width="300" height="280" ></td>
+</table>
+
+A continuación, se muestra un fragmento de código que lo ilustra:
+
+```python
+for i in range(alto // tamaño_casilla):
+    for j in range(ancho//tamaño_casilla):
+        # Dibujar el rectángulo blanco si la suma de i + j es par (para alternar)
+        if (i+ j) % 2 == 0:
+            cv2.rectangle(color_img,
+                          (j * tamaño_casilla, i * tamaño_casilla),
+                          ((j + 1) * tamaño_casilla, (i + 1) * tamaño_casilla),
+                          (255, 255, 255), -1
+```
+
 
 ### Tarea 4 Modificar valores de un plano de la imagen
 
@@ -247,8 +288,30 @@ cv2.circle(color_img_mondrian, min_loc, 4, (0, 255, 255), -1)  # Región más os
 cv2.line(color_img_mondrian, min_loc, max_loc, (255, 255, 0), 1)  # Línea entre las regiones
 ```
 
-### Tarea 6
-Realizar una propuesta propia de estilo Pop Art.
+### Tarea 6 Pop Art
+
+Realizar una propuesta propia de estilo Pop Art. En nuestro caso, decidimos recrear la obra "Marilyn Pop Art" de Andy Warhol, donde partimos de una imagen original y generamos nueve versiones con diferentes variaciones de color. Esto le da un aspecto muy similar a la obra original, capturando la esencia del estilo característico de Warhol, con sus icónicas repeticiones y cambios de color.
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/e946bf1c-8a7e-4355-8873-4419463ff575" width="290" height="290" ></td>
+</table>
+
+Esta función toma una imagen, la convierte a HSV, ajusta el tono (hue) según el valor hue_shift, y luego la convierte nuevamente a RGB. Esto permite cambiar el color percibido sin alterar la saturación o el brillo.
+
+```python
+# Función para ajustar el tono (hue) de la imagen
+def change_hue(image, hue_shift):
+    # Convertir la imagen a modo HSV para modificar el hue
+    img_hsv = image.convert('HSV')
+    np_img = np.array(img_hsv)
+
+    # Cambiar el hue (primer canal en HSV) agregando un valor de cambio
+    np_img[:, :, 0] = (np_img[:, :, 0].astype(int) + hue_shift) % 255  # Cambio de hue
+    img_hue_shifted = Image.fromarray(np_img, 'HSV')
+
+    # Volver a convertir la imagen a modo RGB
+    return img_hue_shifted.convert('RGB')
+```
 
 ---
 
