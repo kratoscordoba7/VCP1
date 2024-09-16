@@ -51,8 +51,9 @@ def aplicar_color_casilla(color_img, i, j, tamaño_casilla, color=255):
 ### Tarea 2 Mondrian
 
 Crear una imagen con estilo Mondrian. Para esta tarea se ha realizado un generador aleatorio de cuadros con estilo Mondrian. Para conseguirlo, se ha tomado aleatoriedad en cuanto a el color, alto y ancho de cada rectángulo pintado. Se recorre toda la imagen mediante dos bucles while, hay que tener en cuenta que cuando se pinte un rectángulo de anchura K el indice para el próximo rectángulo debe ser el actual + k. Uno de los mayores problemas que se encontró durante el desarrollo de esta tarea fue la situación de las líneas negras:
+         
          - Líneas a la derecha de cada rectángulo: se pinta por dentro del rectángulo, de hacerse por fuera el próximo rectángulo sobreescribiría la línea con otro color
-         - Líneas por debajo de cada rectángulo: Esto cubre la posibilidad de que haya rectángulos más pequeños que el más grande de esa línea
+         - Líneas por debajo de cada rectángulo: Esto cubre la posibilidad de que haya rectángulos más pequeños que la altura de la siguiente fila
          - Linéas al final de cada línea: cuando se llega al final, es decir al ancho de la imagen se salta a la próxima fila de ser posible. Antes de hacerlo, se pinta una raya negra y se hace por dentro para que
                                           los rectángulos nuevos no puedan sobreescribirla.
 
