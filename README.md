@@ -25,7 +25,7 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 
 Crear una imagen de 800x800 píxeles con la textura de un tablero de ajedrez utilizando funciones de `numpy` y `matplotlib`. La imagen será en escala de grises (0 negro, 255 blanco). Además, modificar el color de los cuadros para que sean verdes.
 
-Para crear una imagen con un efecto de tablero de ajedrez, es fundamental tener en cuenta dos aspectos clave: la posición de las casillas y su tamaño. La coloración de cada casilla (blanca o negra) se basa en la suma de los índices de las filas (i) y las columnas (j).
+Para crear una imagen con un efecto de tablero de ajedrez, es fundamental tener en cuenta dos aspectos clave: la posición de las casillas y su tamaño. La coloración de cada casilla (blanca o negra) se basa en la suma de los índices de las filas (i) y las columnas (j). Por tanto, cuando la suma de los indices sea par se pintará la casilla de blanco (tener en cuenta que partimos de una imagen totalmente negra). El resultado que se obtiene es de un tablero de ajedrez donde las casillas pares son blancas y las impares negras.
 
 <table align="center">
    <td width="50%">
@@ -50,13 +50,17 @@ def aplicar_color_casilla(color_img, i, j, tamaño_casilla, color=255):
 
 ### Tarea 2 Mondrian
 
-Crear una imagen con estilo Mondrian. Para crear una imagen al estilo de Mondrian, es esencial considerar varios aspectos clave: la disposición aleatoria de los cuadros, las líneas negras que los delimitan, así como las variaciones en el ancho y la altura de cada rectángulo. Además, es importante que la distribución de los colores primarios (rojo, azul, amarillo) y los espacios en blanco se mantenga equilibrada a medida que se pintan los rectángulos.
+Crear una imagen con estilo Mondrian. Para esta tarea se ha realizado un generador aleatorio de cuadros con estilo Mondrian. Para conseguirlo, se ha tomado aleatoriedad en cuanto a el color, alto y ancho de cada rectángulo pintado. Se recorre toda la imagen mediante dos bucles while, hay que tener en cuenta que cuando se pinte un rectángulo de anchura K el indice para el próximo rectángulo debe ser el actual + k. Uno de los mayores problemas que se encontró durante el desarrollo de esta tarea fue la situación de las líneas negras:
+         - Líneas a la derecha de cada rectángulo: se pinta por dentro del rectángulo, de hacerse por fuera el próximo rectángulo sobreescribiría la línea con otro color
+         - Líneas por debajo de cada rectángulo: Esto cubre la posibilidad de que haya rectángulos más pequeños que el más grande de esa línea
+         - Linéas al final de cada línea: cuando se llega al final, es decir al ancho de la imagen se salta a la próxima fila de ser posible. Antes de hacerlo, se pinta una raya negra y se hace por dentro para que
+                                          los rectángulos nuevos no puedan sobreescribirla.
 
 <table align="center">
    <td><img src="https://github.com/user-attachments/assets/7cee482b-4119-4ab1-89db-09c13c095bbd" width="200" height="280" ></td>
 </table>
 
-A continuación, se muestra un fragmento de código quelo ilustra:
+A continuación, se muestra un fragmento de código que lo ilustra:
 
 ```python
 while posicionY < alto:
@@ -74,7 +78,7 @@ while posicionY < alto:
 
 ### Tarea 3 Funciones de dibujo de OpenCV
 
-Recrear una de las tareas anteriores utilizando las funciones de dibujo de OpenCV. En este caso, se optó por recrear lo que realizamos en la tarea uno, es decir, la creación de un tablero de ajedrez, utilizando las funciones de OpenCV. Para ello, se empleó la función `cv2.rectangle`, que permite dibujar los rectángulos que componen el tablero, alternando los colores para representar las casillas.
+Recrear una de las tareas anteriores utilizando las funciones de dibujo de OpenCV. En este caso, se optó por recrear lo que realizamos en la tarea uno, es decir, la creación de un tablero de ajedrez, utilizando las funciones de OpenCV. Para ello, se empleó la función `cv2.rectangle`, que permite dibujar los rectángulos que componen el tablero, alternando los colores para representar las casillas. La lógica implícita en esta tarea es la misma vista en la tarea uno pero haciendo uso de una función distinta.
 
 <table align="center">
    <td><img src="https://github.com/user-attachments/assets/dac8c5a2-0fde-4063-acff-81db9015891d" width="300" height="280" ></td>
