@@ -319,12 +319,22 @@ def change_hue(image, hue_shift):
 
 Para comenzar con el proyecto, sigue estos pasos:
 
-1. Clona el repositorio:
+### Opción 1: Clonar y trabajar en el proyecto localmente (VS Code)
+1. **Clona el repositorio**: Ejecuta el siguiente comando en tu terminal para clonar el repositorio:
    ```bash
    git clone https://github.com/kratoscordoba7/VCP1.git
    ```
-2. Abre el proyecto en VS Code.
-3. Navegar por las tareas e ir siguiendo las instrucciones.
+
+2. **Abre el proyecto en VS Code**: Una vez clonado el repositorio, abre VS Code y carga la carpeta del proyecto que acabas de clonar. 
+
+3. **Navegar por las tareas**: En el archivo del repositorio o instrucciones que estén incluidas, navega por las tareas paso a paso y sigue las indicaciones proporcionadas. 
+
+### Opción 2: Usar Google Colab
+1. **Abrir Google Colab**: Si prefieres trabajar en un entorno online, puedes utilizar el siguiente enlace a Google Colab:
+   [Google Colab Proyecto](https://colab.research.google.com/drive/1UrmM8vqDvw94B3zJrQTczLcsCleEgTGC?usp=sharing)
+
+2. **Cargar tu propio código**: Puedes cargar tus archivos desde el repositorio directamente en Google Colab o ejecutar partes del código en celdas de Python.
+
 
 ---
 
