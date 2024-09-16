@@ -19,6 +19,29 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 
 ---
 
+## 🚀 Cómo empezar
+
+Para comenzar con el proyecto, sigue estos pasos:
+
+### Paso 1: Abrir VSCode y situarse en el directorio:
+   "C:\Users\TuNombreDeUsuario\anaconda3\envs\VCP1"
+   Nota: Debes de situarte en un envioroment configurado como se definió en el cuaderno de la práctica (https://github.com/otsedom/otsedom.github.io/blob/main/VC/P1/README.md#111-comandos-basicos-de-anaconda)
+   
+### Paso 2: Clonar y trabajar en el proyecto localmente (VS Code)
+1. **Clona el repositorio**: Ejecuta el siguiente comando en tu terminal para clonar el repositorio:
+   ```bash
+   git clone https://github.com/kratoscordoba7/VCP1.git
+   ```
+2. Una vez clonado, todos los archivos han de estar situado en el envioroment del paso 1
+
+### Paso 3: Abrir Anaconda prompt y activar el envioroment:
+   ```bash
+   conda activate NombreDeTuEnvioroment
+   ```
+Tras estos pasos debería poder ejecutar el proyecto localmente
+
+---
+
 <h2 align="center">📋 Tareas</h2>
 
 ### Tarea 1 Tablero de ajedrez
@@ -317,44 +340,6 @@ def change_hue(image, hue_shift):
     # Volver a convertir la imagen a modo RGB
     return img_hue_shifted.convert('RGB')
 ```
-
----
-
-## 🚀 Cómo empezar
-
-Para comenzar con el proyecto, sigue estos pasos:
-
-### Opción 1: Clonar y trabajar en el proyecto localmente (VS Code)
-1. **Clona el repositorio**: Ejecuta el siguiente comando en tu terminal para clonar el repositorio:
-   ```bash
-   git clone https://github.com/kratoscordoba7/VCP1.git
-   ```
-
-2. **Abre el proyecto en VS Code**: Una vez clonado el repositorio, abre VS Code y carga la carpeta del proyecto que acabas de clonar. 
-
-3. **Navegar por las tareas**: En el archivo del repositorio o instrucciones que estén incluidas, navega por las tareas paso a paso y sigue las indicaciones proporcionadas. 
-
-### Opción 2: Usar Google Colab
-1. **Abrir Google Colab**: Si prefieres trabajar en un entorno online, puedes utilizar el siguiente enlace a Google Colab:
-   [Google Colab Proyecto](https://colab.research.google.com/drive/1UrmM8vqDvw94B3zJrQTczLcsCleEgTGC?usp=sharing)
-
-2. **Cargar tu propio código**: Puedes cargar tus archivos desde el repositorio directamente en Google Colab o ejecutar partes del código en celdas de Python.
-
-
----
-
-## 🤝 Contribuciones
-
-Si deseas contribuir a este repositorio, por favor sigue estos pasos:
-
-<img align="left" width="200" height="180" src="https://github.com/AlejandroDavidArzolaSaavedra/CNN-CT-BRAIN/assets/90756437/3bf833fa-828e-467c-89b8-0ea4a077d3ea">
-
-1. Haz un fork del repositorio.
-2. Crea una nueva rama para tus cambios: `git checkout -b feature/nueva-caracteristica`.
-3. Realiza tus cambios y haz un commit: `git commit -m "Añadir nueva característica"`.
-4. Envía tus cambios a tu repositorio forked: `git push origin feature/nueva-caracteristica`.
-5. Crea un pull request explicando tus cambios.
-
 
 ---
 
