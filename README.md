@@ -16,7 +16,6 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-%43FF6400?style=for-the-badge&logo=matplotlib&logoColor=white)](Link_To_Your_Matplotlib_Page)
 [![Pillow](https://img.shields.io/badge/Pillow-%23000000?style=for-the-badge&logo=pillow)](Link_To_Your_Pillow_Page)
 
-
 ---
 
 ## 🚀 Cómo empezar
@@ -24,19 +23,24 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 Para comenzar con el proyecto, sigue estos pasos:
 
 ### Paso 1: Abrir VSCode y situarse en el directorio:
-   "C:\Users\TuNombreDeUsuario\anaconda3\envs\VCP1"
-   Nota: Debes de situarte en un envioroment configurado como se definió en el cuaderno de la práctica (https://github.com/otsedom/otsedom.github.io/blob/main/VC/P1/README.md#111-comandos-basicos-de-anaconda)
+   
+   `C:\Users\TuNombreDeUsuario\anaconda3\envs\VCP1`
+
+> [!NOTE]  
+> Debes de situarte en un environment configurado como se definió en el cuaderno de la práctica de [otsedom](https://github.com/otsedom/otsedom.github.io/blob/main/VC/P1/README.md#111-comandos-basicos-de-anaconda).
+
+
    
 ### Paso 2: Clonar y trabajar en el proyecto localmente (VS Code)
 1. **Clona el repositorio**: Ejecuta el siguiente comando en tu terminal para clonar el repositorio:
    ```bash
    git clone https://github.com/kratoscordoba7/VCP1.git
    ```
-2. Una vez clonado, todos los archivos han de estar situado en el envioroment del paso 1
+2. Una vez clonado, todos los archivos han de estar situado en el environment del paso 1
 
 ### Paso 3: Abrir Anaconda prompt y activar el envioroment:
    ```bash
-   conda activate NombreDeTuEnvioroment
+   conda activate NombreDeTuEnvironment
    ```
 Tras estos pasos debería poder ejecutar el proyecto localmente
 
