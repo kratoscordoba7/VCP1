@@ -22,14 +22,12 @@ Se han completado todas las tareas solicitadas de la **Práctica 1** para la asi
 
 Para comenzar con el proyecto, sigue estos pasos:
 
-### Paso 1: Abrir VSCode y situarse en el directorio:
-   
-   `C:\Users\TuNombreDeUsuario\anaconda3\envs\VCP1`
-
 > [!NOTE]  
 > Debes de situarte en un environment configurado como se definió en el cuaderno de la práctica de [otsedom](https://github.com/otsedom/otsedom.github.io/blob/main/VC/P1/README.md#111-comandos-basicos-de-anaconda).
 
-
+### Paso 1: Abrir VSCode y situarse en el directorio:
+   
+   `C:\Users\TuNombreDeUsuario\anaconda3\envs\VCP1`
    
 ### Paso 2: Clonar y trabajar en el proyecto localmente (VS Code)
 1. **Clona el repositorio**: Ejecuta el siguiente comando en tu terminal para clonar el repositorio:
