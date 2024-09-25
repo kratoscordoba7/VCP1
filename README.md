@@ -1,6 +1,6 @@
 <h1 align="center">🌟 Práctica 1 - Visión por Computador (Curso 2024/2025)</h1>
 
-<img align="left" width="160" height="160" src="https://github.com/user-attachments/assets/b279b85c-7ae5-4f07-bc42-ec238591eaf0"></a>
+<img align="left" width="160" height="160" src="https://i.imgur.com/SckSK0a.png"></a>
 Se han completado todas las tareas solicitadas de la **Práctica 1** para la asignatura **Visión por Computador**. Primeros pasos con OpenCV.
 
 *Trabajo realizado por*:
