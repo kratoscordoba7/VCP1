@@ -237,6 +237,12 @@ g = np.clip(g, 0, 255)
 b = np.clip(b, 0, 255)   
 ```
 
+Aqui un ejemplo con la camara web cam:
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/c090a18a-e45d-4166-bd30-f684abf65c00" width="650" height="180" ></td>
+</table>
+
 ### Tarea 5 Pixel más claro y oscuro de la imagen
 
 Dibujar círculos en las posiciones del píxel más claro y oscuro de la imagen. Si se quiere hacer sobre la zona 8x8 más clara/oscura, ¿cómo se haría?
@@ -272,6 +278,12 @@ if ret:
         
    cv2.imshow('Detectar zona oscura y clara', frame)
 ```
+
+Aqui un ejemplo con la camara web cam:
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/22c64516-5066-4289-a8ab-d32537606586" width="350" height="280" ></td>
+</table>
 
 Para detectar las zonas más claras y oscuras en un bloque de 8x8 píxeles dentro de un vídeo en tiempo real, puedes seguir una metodología similar a la que ya hemos utilizado con imágenes estáticas, pero aplicándola a cada fotograma del vídeo.
 
@@ -318,6 +330,13 @@ cv2.circle(color_img_mondrian, min_loc, 4, (0, 255, 255), -1)  # Región más os
 cv2.line(color_img_mondrian, min_loc, max_loc, (255, 255, 0), 1)  # Línea entre las regiones
 ```
 
+Aqui un ejemplo con la camara web cam:
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/13d3849b-b00a-4a58-83b0-a45184302482" width="250" height="180" ></td>
+</table>
+
+
 ### Tarea 6 Pop Art
 
 Realizar una propuesta propia de estilo Pop Art. En nuestro caso, decidimos recrear la obra "Marilyn Pop Art" de Andy Warhol, donde partimos de una imagen original y generamos nueve versiones con diferentes variaciones de color. Esto le da un aspecto muy similar a la obra original, capturando la esencia del estilo característico de Warhol, con sus icónicas repeticiones y cambios de color.
@@ -342,6 +361,13 @@ def change_hue(image, hue_shift):
     # Volver a convertir la imagen a modo RGB
     return img_hue_shifted.convert('RGB')
 ```
+
+Aqui un ejemplo con la camara web cam:
+
+<table align="center">
+   <td><img src="https://github.com/user-attachments/assets/d992d0be-825d-4cb4-ab89-c952256ef5d8" width="350" height="280" ></td>
+</table>
+
 
 ---
 
