@@ -129,7 +129,7 @@ for i in range(alto // tamaño_casilla):
 Primero, hemos realizado modificaciones en el plano de diversas imágenes utilizando las bibliotecas Matplotlib, NumPy y OpenCV. Tomamos una imagen en color e invertimos sus colores. Es importante convertir la imagen de BGR a RGB antes de realizar la inversión.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/28b5a22b-467e-499a-8853-7f6d17ebb6c3" width="600" height="280" ></td>
+   <td><img src="img/cat_invert.png" width="600" height="280" ></td>
 </table>
    
 A continuación, se muestra un fragmento de código que ilustra este proceso:
@@ -146,7 +146,7 @@ inver_img_rgb = 255 - color_img_rgb
 La siguiente modificación que realizaremos será aplicar un desenfoque gaussiano al plano. Para desenfocar la imagen utilizando OpenCV, simplemente empleamos el método `cv2.GaussianBlur`. 
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/f3c16946-1179-4c31-a8b1-a3d00169292a" width="700" height="280" ></td>
+   <td><img src="img/gaussian.png" width="700" height="280" ></td>
 </table>
 
 A continuación se muestra un ejemplo de cómo aplicar este desenfoque gaussiano a una imagen:
@@ -159,7 +159,7 @@ blurred_image = cv2.GaussianBlur(color_img, (5, 5), 0)
 La siguiente modificación consiste en aumentar el contraste de la imagen y detectar sus bordes. Es importante tener en cuenta que para detectar los bordes en la imagen utilizamos el método `cv2.Canny`, proporcionado por OpenCV. Además, para asegurarnos de que los valores de los píxeles se encuentren en el rango adecuado después de aumentar el contraste, debemos utilizar los métodos `np.clip()` y `astype(np.uint8)`.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/2f19d6eb-9bfd-4f57-bf5c-20ee4aed3df0" width="700" height="280" ></td>
+   <td><img src="img/canny.png" width="700" height="280" ></td>
 </table>
 
 A continuación, se muestra cómo puedes llevar a cabo estos ajustes en la imagen:
@@ -180,7 +180,7 @@ Para asegurarnos de que los valores resultantes se mantengan dentro del rango v�
 Por último, hemos aplicado la operación del módulo a la imagen. Como podemos observar, cuanto mayor sea el valor del módulo, más intensamente se representará el color en la imagen. Esto se debe a que el módulo permite ajustar la amplitud de los valores de los píxeles, haciendo que las diferencias de color sean más notables.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/70b6c91e-274d-446a-95ea-5c7652686590" width="600" height="280" ></td>
+   <td><img src="img/inversion_rgb.png" width="600" height="280" ></td>
 </table>
 
 Aquí tienes un ejemplo de cómo hacerlo:
@@ -240,7 +240,7 @@ b = np.clip(b, 0, 255)
 Aqui un ejemplo con la camara web cam:
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/c090a18a-e45d-4166-bd30-f684abf65c00" width="650" height="180" ></td>
+   <td><img src="img/inversion_rgb_camera.png" width="650" height="180" ></td>
 </table>
 
 ### Tarea 5 Pixel más claro y oscuro de la imagen
@@ -248,7 +248,7 @@ Aqui un ejemplo con la camara web cam:
 Dibujar círculos en las posiciones del píxel más claro y oscuro de la imagen. Si se quiere hacer sobre la zona 8x8 más clara/oscura, ¿cómo se haría?
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/8048d6b1-07c2-4cbe-89a5-eede2b2110f8" width="600" height="280" ></td>
+   <td><img src="img/detect_light_and_dark.png" width="600" height="280" ></td>
 </table>
 
 ```python
@@ -282,13 +282,13 @@ if ret:
 Aqui un ejemplo con la camara web cam:
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/22c64516-5066-4289-a8ab-d32537606586" width="350" height="280" ></td>
+   <td><img src="img/detect_light_and_dark_camera.png" width="350" height="280" ></td>
 </table>
 
 Para detectar las zonas más claras y oscuras en un bloque de 8x8 píxeles dentro de un vídeo en tiempo real, puedes seguir una metodología similar a la que ya hemos utilizado con imágenes estáticas, pero aplicándola a cada fotograma del vídeo.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/a39a13c2-0cc2-48df-8f3d-9339fceebe2a" width="400" height="290" ></td>
+   <td><img src="img/detect_light_and_dark_8x8.png" width="400" height="290" ></td>
 </table>
 
 Ejemplo para detectar la región de 8x8 píxeles más clara y más oscura en cada fotograma de un vídeo:
@@ -333,7 +333,7 @@ cv2.line(color_img_mondrian, min_loc, max_loc, (255, 255, 0), 1)  # Línea entre
 Aqui un ejemplo con la camara web cam:
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/13d3849b-b00a-4a58-83b0-a45184302482" width="250" height="180" ></td>
+   <td><img src="img/detect_light_and_dark_8x8_camera.png" width="250" height="180" ></td>
 </table>
 
 
@@ -342,7 +342,7 @@ Aqui un ejemplo con la camara web cam:
 Realizar una propuesta propia de estilo Pop Art. En nuestro caso, decidimos recrear la obra "Marilyn Pop Art" de Andy Warhol, donde partimos de una imagen original y generamos nueve versiones con diferentes variaciones de color. Esto le da un aspecto muy similar a la obra original, capturando la esencia del estilo característico de Warhol, con sus icónicas repeticiones y cambios de color.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/e946bf1c-8a7e-4355-8873-4419463ff575" width="290" height="290" ></td>
+   <td><img src="img/pop_art.png" width="290" height="290" ></td>
 </table>
 
 Esta función toma una imagen, la convierte a HSV, ajusta el tono (hue) según el valor hue_shift, y luego la convierte nuevamente a RGB. Esto permite cambiar el color percibido sin alterar la saturación o el brillo.
@@ -365,7 +365,7 @@ def change_hue(image, hue_shift):
 Aqui un ejemplo con la camara web cam:
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/d992d0be-825d-4cb4-ab89-c952256ef5d8" width="350" height="280" ></td>
+   <td><img src="img/pop_art_camera.png" width="350" height="280" ></td>
 </table>
 
 
