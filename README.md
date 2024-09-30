@@ -1,6 +1,6 @@
 <h1 align="center">🌟 Práctica 1 - Visión por Computador (Curso 2024/2025)</h1>
 
-<img align="left" width="160" height="160" src="https://i.imgur.com/SckSK0a.png"></a>
+<img align="left" width="160" height="160" src="img/octo_cat.png"></a>
 Se han completado todas las tareas solicitadas de la **Práctica 1** para la asignatura **Visión por Computador**. Primeros pasos con OpenCV.
 
 *Trabajo realizado por*:
@@ -56,12 +56,12 @@ Para crear una imagen con un efecto de tablero de ajedrez, es fundamental tener 
    <td width="50%">
       <h3 align="center">♟️ Tablero de ajedrez</h3>
       <div align="center">
-      <img src="https://github.com/user-attachments/assets/3996c73a-4281-4acc-9cc4-7efc2725061a" width="400" height="355" alt="Tablero de ajedrez">
+      <img src="img/tablero.png" width="400" height="355" alt="Tablero de ajedrez">
    </td>
    <td width="50%">
       <h3 align="center">♟️ Tablero de ajedrez verde</h3>
       <div align="center">                                       
-      <img src="https://github.com/user-attachments/assets/8da19385-fa10-48ab-beb6-154c0a31f192" width="400" height="355"  alt=" Tablero de ajedrez verde"></a>
+      <img src="img/tablero_verde.png" width="400" height="355"  alt=" Tablero de ajedrez verde"></a>
    <br>                                                 
 </table>
 
@@ -83,7 +83,7 @@ Crear una imagen con estilo Mondrian. Para esta tarea se ha realizado un generad
                                           los rectángulos nuevos no puedan sobreescribirla.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/7cee482b-4119-4ab1-89db-09c13c095bbd" width="200" height="280" ></td>
+   <td><img src="img/mondrian.png" width="200" height="280" ></td>
 </table>
 
 A continuación, se muestra un fragmento de código que lo ilustra:
@@ -107,7 +107,7 @@ while posicionY < alto:
 Recrear una de las tareas anteriores utilizando las funciones de dibujo de OpenCV. En este caso, se optó por recrear lo que realizamos en la tarea uno, es decir, la creación de un tablero de ajedrez, utilizando las funciones de OpenCV. Para ello, se empleó la función `cv2.rectangle`, que permite dibujar los rectángulos que componen el tablero, alternando los colores para representar las casillas. La lógica implícita en esta tarea es la misma vista en la tarea uno pero haciendo uso de una función distinta.
 
 <table align="center">
-   <td><img src="https://github.com/user-attachments/assets/dac8c5a2-0fde-4063-acff-81db9015891d" width="300" height="280" ></td>
+   <td><img src="img/tablero_opencv.png" width="300" height="280" ></td>
 </table>
 
 A continuación, se muestra un fragmento de código que lo ilustra:
